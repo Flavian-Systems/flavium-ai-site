@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Flavium — the capability runtime for AI agents</title>
+  <meta name="description" content="Flavium is a capability runtime for AI agents: bounded authority, enforced budgets, and a replayable audit trail, in one binary between agents and the world.">
+  <link rel="canonical" href="https://flavium.ai/">
+  <meta name="theme-color" content="#1e2761">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Flavium">
+  <meta property="og:url" content="https://flavium.ai/">
+  <meta property="og:title" content="Flavium — the capability runtime for AI agents">
+  <meta property="og:description" content="Bounded authority, enforced budgets, and a replayable audit trail — in one binary between agents and the world.">
+  <meta property="og:image" content="https://flavium.ai/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Flavium wordmark and the tagline “The capability runtime for AI agents” over concentric arena arches.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Flavium — the capability runtime for AI agents">
+  <meta name="twitter:description" content="Bounded authority, enforced budgets, and a replayable audit trail — in one binary between agents and the world.">
+  <meta name="twitter:image" content="https://flavium.ai/og.png">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preload" href="fonts/source-serif-4-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/source-serif-4-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap hero-top">
+      <span class="wordmark">FLAVIUM</span>
+      <a href="https://github.com/flavian-systems/flavium">GitHub ↗</a>
+    </div>
+
+    <div class="wrap hero-main">
+      <h1>The capability runtime for AI agents</h1>
+      <p class="hero-sub">Bounded authority · enforced budgets · replayable audit — in one binary between agents and the world.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://github.com/flavian-systems/flavium/blob/main/DESIGN.md">Read the design</a>
+        <a class="btn btn-ghost" href="https://github.com/flavian-systems/flavium">GitHub</a>
+      </div>
+    </div>
+
+    <div class="arches" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hook">
+      <div class="hook-arch" aria-hidden="true"></div>
+      <p><span class="dim">A VM decides where the agent runs.</span> Flavium decides what it may do.</p>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2 class="kicker">01 · The problem</h2>
+        <p class="prose">Agents are hired for their authority, not their compute — they hold credentials to email, files, databases, and money. Prompt injection makes every agent a <em>confused deputy</em>: an attacker doesn’t need to escape a sandbox when the agent will misuse authority it legitimately holds. VMs and sandboxes protect the machine; <strong>Flavium protects the mission.</strong></p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2 class="kicker">02 · Four pillars</h2>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-numeral" aria-hidden="true">I</div>
+            <h3>Authority</h3>
+            <p>Unforgeable grants with argument-level constraints.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-numeral" aria-hidden="true">II</div>
+            <h3>Visibility</h3>
+            <p>Per-agent namespaces.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-numeral" aria-hidden="true">III</div>
+            <h3>Quantity</h3>
+            <p>Budgets enforced mid-execution.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-numeral" aria-hidden="true">IV</div>
+            <h3>Accountability</h3>
+            <p>Hash-chained, replayable trace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2 class="kicker">03 · A grant, shown</h2>
+        <figure class="grant">
+          <div class="grant-card" role="region" aria-label="Example grant" tabindex="0">
+            <pre><code><span class="k">permit</span><span class="p">(</span>invoice-bot<span class="p">,</span> email.send<span class="p">)</span>
+  <span class="k">when</span> recipient.endsWith<span class="p">(</span><span class="s">"@yourco.com"</span><span class="p">)</span>
+  <span class="k">budget</span> 5/day    <span class="k">expires</span> 2026-09-01</code></pre>
+          </div>
+          <figcaption class="grant-caption"><strong>Denied mechanically. Logged immutably.</strong> The injection still happened — the consequence did not.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2 class="kicker">04 · Status</h2>
+        <p class="prose">Open source (MIT/Apache-2.0), pre-v0.1 — design phase. Built in the open.</p>
+        <div class="status-links">
+          <a href="https://github.com/flavian-systems/flavium">GitHub repo ↗</a>
+          <a href="https://github.com/flavian-systems/flavium/blob/main/DESIGN.md">DESIGN.md ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <div>
+          <span class="wordmark">FLAVIUM</span>
+          <p class="footer-tag">Flavium — a Flavian Systems project · Cluj-Napoca, EU</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="mailto:hello@flavium.ai">hello@flavium.ai</a>
+          <a href="https://github.com/flavian-systems/flavium">GitHub</a>
+          <a href="https://codeberg.org/flavian-systems/flavium">Codeberg</a>
+        </nav>
+      </div>
+      <div class="footer-legal">
+        <p>Flavium and the Flavium logo are trademarks; code is MIT OR Apache-2.0.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
